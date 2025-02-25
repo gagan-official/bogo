@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primary: #ff6b82;
+  --primaryLight: #fff9fa;
+  --primaryDark: #d7445b;
+  --grey: #c8c8c8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+.container {
+  max-width: 458px;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+}
+
+#radioForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mainHeading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 600;
+}
+.mainHeading span {
+  flex-shrink: 0;
+}
+.mainHeading::before,
+.mainHeading::after {
+  content: "";
+  height: 1px;
+  width: 50%;
+  background-color: var(--grey);
+}
+#radioForm .selectionContainer {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--grey);
+  position: relative;
+}
+#radioForm .selectionInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+#radioForm input {
+  display: none;
+}
+#radioForm input:checked + .selectionContainer {
+  border-color: var(--primary);
+  border-width: 2px;
+  background-color: var(--primaryLight);
+}
+.customRadio {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  padding: 4px;
+  outline: 1px solid var(--grey);
+  outline-offset: 2px;
+}
+#radioForm input:checked + .selectionContainer .selectionInfo .customRadio {
+  outline-color: var(--primary);
+  background-color: var(--primary);
+}
+.leftLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.infoCont h5 {
+  display: flex;
+  gap: 10px;
+}
+.chipLabel {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1px 5px;
+  font-weight: normal;
+  font-size: 12px;
+}
+.rightLabel h5 {
+  font-weight: 600;
+}
+.stdPrc {
+  font-size: 12px;
+  margin-top: 2px;
+}
+.originalPrice {
+  font-size: 10px;
+  opacity: 0.5;
+}
+.sizeColorTable {
+  width: fit-content;
+  text-align: left;
+  border-collapse: collapse;
+}
+.sizeColorTable th,
+.sizeColorTable td {
+  font-weight: normal;
+  font-size: 11px;
+  padding: 4px;
+}
+.sizeColorTable select {
+  width: 70px;
+  border: 1px solid var(--grey);
+  font-size: 12px;
+  padding: 3px 2px;
+}
+#radioForm input:not(:checked) + .selectionContainer .sizeColorTable {
+  display: none;
+}
+
+/* Most Popular Styling */
+.mostPopular {
+  position: absolute;
+  top: -8px;
+  right: 5px;
+  text-transform: uppercase;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 0 0 4px 4px;
+}
+.mostPopular::before,
+.mostPopular::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: var(--primaryDark);
+  width: 50%;
+  height: 7px;
+  z-index: -1;
+  --leftRight: -3px;
+  --skeyValue: 40deg;
+}
+.mostPopular::before {
+  left: var(--leftRight);
+  transform: skewX(calc(var(--skeyValue) * -1));
+}
+.mostPopular::after {
+  right: var(--leftRight);
+  transform: skewX(var(--skeyValue));
+}
+
+/* Utility Classes */
+.strike {
+  text-decoration: line-through;
+}
+
+.finalDetailContainer {
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.finalDetailContainer span.freeDelivery {
+  color: var(--primary);
+}
+.addToCartBtn {
+  outline: none;
+  border: none;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.addToCartBtn:hover {
+  opacity: 0.8;
+}
+
+.powered {
+  font-style: italic;
+  color: var(--grey);
+  text-align: right;
+  margin-top: -10px;
+}
