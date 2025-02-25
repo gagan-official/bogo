@@ -15,9 +15,9 @@
 }
 
 .container {
-  max-width: 458px;
+  max-width: 384px;
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 2rem;
 }
 
 #radioForm {
